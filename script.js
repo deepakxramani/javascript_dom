@@ -290,7 +290,7 @@
 
 //* another way to add inline css using "cssText" property...
 
-let inputBox = document.getElementById('username');
+// let inputBox = document.getElementById('username');
 
 // But this will overwrite the existing css
 //inputBox.style.cssText = "width: 200px"
@@ -302,17 +302,168 @@ let inputBox = document.getElementById('username');
 
 
 // we can add multiple styles using this cssText property
-inputBox.style.cssText = "width: 200px; height: 100px"
-console.log(inputBox.style)
-console.log(inputBox.style.getPropertyValue('height'))
+// inputBox.style.cssText = "width: 200px; height: 100px"
+// console.log(inputBox.style)
+// console.log(inputBox.style.getPropertyValue('height'))
+
+
+
+
+//* getComputedStyle() method:
+// If you want to read internal css written in head you'll use getComputedStyle() method.
+// getComputedStyle() is a window object. Read-only
+
+// syntax: window.getComputedStyle(element, pseudoElement)
+
+// let inputBox = document.getElementById('username');
+// console.log(window.getComputedStyle(inputBox))
+// console.log(window.getComputedStyle(inputBox).fontSize)
+// console.log(window.getComputedStyle(inputBox).backgroundColor)
+// console.log(window.getComputedStyle(inputBox).width)
+
+
+
+//* className property:
+
+// let title = document.getElementById('title');
+//console.log(title.className);    // will return all the classes
+
+//title.className = "new"             // will add the "new" class to the h1 element. But will overwrite the existing ones.
+//console.log(title);
+
+// if you want to have the existing + new class then use concatenating +=
+
+// title.className += " new" 
+// console.log(title);  
 
 
 
 
 
+//* classList property: -> The classList returns the collection of CSS classes.
+
+
+// let title = document.getElementById('title');
+
+// console.log(title.classList);  // will return all the available classes
+
+// add classes
+//title.classList.add("new")              // for adding single class
+//title.classList.add("new", "new2")      // for adding multiple classes
+//console.log(title)
+
+
+// remove classes
+//title.classList.remove("message")              // for removing single class
+//title.classList.remove("message", "main")      // for removing multiple classes
+//console.log(title)
+
+
+
+// replace classes
+//title.classList.replace("message", "msg")         // in first arguement write the existing classname and in the second write new classname.
+//title.classList.replace("message", "main")      
+//console.log(title)
+
+
+// check classes if exists or not
+//console.log(title.classList.contains("message"))        // if class exists then it'll return true
+                                                        // otherwise false.
+
+
+// toggle: -> will remove the class if it exists, if class doesn't exist then it'll add that class to the element.
+
+// title.classList.toggle("message");
+// title.classList.toggle("msg");
+// console.log(title)
 
 
 
 
+//* JavaScript Events
 
+//& 1. HTML Event Handler Attributes:
+
+// Ex - onclick, onchange
+
+// function displayMsg() {
+//     console.log("Button Clicked from function!");
+// }
+
+
+//& 2. Adding Event handler name in JS:
+
+// let btn = document.getElementById("btn");
+
+//btn.onclick = function() {
+    // console.log("Button Clicked!");
+    // console.log(this.id);                // btn
+    // console.log(id);                    // undefined
+    // console.log(type);                  // undefined   
+//}
+
+
+// to remove the event handler:
+
+//btn.onclick = null;     // it'll remove the event handler
+
+
+
+
+//& 3. addEventListener() And removeEventListner() :
+
+//& These are two methods that handles the event
+
+//^ 1. addEventListener():
+
+//^ Syntax -> addEventListener(event, function(), useCapture) 
+
+//^ event -> any click, mouseover, mousemove, keypress etc... 
+//^ function() -> function to be executed when clicked
+//^ useCapture -> by default false, used for event capturing and bubbling... 
+
+
+let btn = document.getElementById("btn");
+
+// btn.addEventListener('click', function(event){
+//     console.log("Button Clicked!");
+//     console.log(event);
+//     console.log(event.type);
+// })
+
+//! or
+
+// function displayMsg(event) {
+//     console.log("Button Clicked!");
+//     console.log(event);
+//     console.log(event.type);
+// }
+
+// btn.addEventListener('click', displayMsg)
+
+
+//^ 2. removeEventListner(): 
+
+
+// btn.addEventListener('click', function(event){
+//     console.log("Button Clicked!");
+//     console.log(event);
+//     console.log(event.type);
+// })
+
+// btn.removeEventListener('click', function(){
+//     console.log("Event Listener removed!");
+// })
+
+//! Note:- Cannot remove the anonoumous function as above
+
+function displayMsg(event) {
+    console.log("Button Clicked!");
+    console.log(event);
+    console.log(event.type);
+}
+
+btn.addEventListener('click', displayMsg)
+
+btn.removeEventListener('click', displayMsg)
 

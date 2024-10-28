@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        /* getComputedStyle() */
+        input {
+            background-color: red;
+            font-size: 12px;
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -122,10 +131,50 @@
 
 
         <!--* MANIPULATING ELEMENT'S STYLE -->
-
+<!-- 
         <input type="text" id="username" placeholder="username" class="user" 
-        style="background-color: black; color: white; font-size: 20px;">
+        style="background-color: black; color: white; font-size: 20px;"> -->
 
+
+
+
+        <!--* getComputedStyle()  -->
+        
+        <!-- <input type="text" id="username" placeholder="username"> -->
+
+
+
+
+        <!--* className property  -->
+
+        <!-- <h1 id="title" class="main message" >GreatStack</h1> -->
+
+
+        <!--* classList property  -->
+
+        <!-- <h1 id="title" class="main message" >GreatStack</h1> -->
+
+
+
+        <!--* JavaScript Events -->
+
+        <div id="container">
+            <!--* 1. HTML Event Handler Attributes  -->
+            <!-- <button type="button" onclick="console.log('Button Clicked')">Click Here</button> -->
+            <!-- <button type="button" onclick="displayMsg()">Click Here</button> -->
+            <!-- <button type="button" onclick="console.log(event);">Click Here</button> -->
+            <!-- <button type="button" onclick="console.log(event.type);">Click Here</button> -->
+            <!-- <button type="button" onclick="console.log(event.target);">Click Here</button> -->
+            <!-- <button type="button" onclick="console.log(this);">Click Here</button> -->
+            <!-- <button type="button" id="btn" onclick="console.log(this.id);">Click Here</button> -->
+            <!-- <button type="button" id="btn" onclick="console.log(id);">Click Here</button> -->
+            <!-- <button type="button" id="btn" onclick="console.log(type);">Click Here</button> -->
+            <!-- <button type="button" id="btn" onclick="console.log(type);">Click Here</button> -->
+
+            <!--* 2. Adding Event handler name in JS  -->
+            <button id="btn" >Click Here</button>
+
+        </div>
         
 
 
